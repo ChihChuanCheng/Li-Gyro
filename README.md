@@ -8,7 +8,8 @@ Li-Gyro是一片支援輕量自穩飛行器的飛控板 。其供電電池為1s�
 
 ![Li-Gyro specification](https://github.com/ChihChuanCheng/Li-Gyro/blob/main/Li-GyroFlightController.png)
 
-圖 1 Li-Gyro機板配置
+
+**圖 1 Li-Gyro機板配置**
  
 
 ## 開源程式介紹
