@@ -5,7 +5,7 @@ Li-Gyro是一片支援輕量自穩飛行器的飛控板 。其供電電池為1s�
 ## Li-Gyro機板介紹
 圖 1為Li-Gyro機板配置，從背面來看，其搭載ESP8266，以WiFi為控制媒介，並以外接天線的方式延伸控制距離，實際測試控制距離可達約100公尺，例如400公尺操場皆在控制範圍內。從正面來看，其內嵌MPU6050陀螺儀，能夠偵測飛行載體的飛行姿態，如與預期飛行姿態有偏差時，則可予以修正，驅動器支援2顆空心杯直流馬達、2顆伺服馬達，具有燒錄功能，可隨時修改飛控板程式延伸其應用範圍。
 遙控器方面，可使用手機安裝V7RC(Android, iPhone)來操控Li-Gyro機板，或是以實體手把來操控皆可，相關的開源程式如下介紹。
-![Li-Gyro specification] (https://github.com/ChihChuanCheng/Li-Gyro/blob/main/Li-GyroFlightController.png)
+![Li-Gyro specification](https://github.com/ChihChuanCheng/Li-Gyro/blob/main/Li-GyroFlightController.png)
 圖 1 Li-Gyro機板配置
  
 
