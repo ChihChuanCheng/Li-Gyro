@@ -19,7 +19,7 @@ Li-Gyro is the open source for Li-Gyro flight controller. It mainly receives con
 V7RC app is introduced in [V7RC](https://hackmd.io/@accomdemy/v7rc).
 #### V7RC gamepad
 To allow gamepad to connect to V7RC app (in gamepad mode) via bluetooth, which in turn connects to Li-Gyro via WiFi to deliver control command. In this way, gamepad is able to take the advantage of V7RC app for parameter adjustment, e.g, trimming.
-#### Gamepad_WiFi	WiFi gamepad程式
+#### WiFi gamepad
 To allow gamepad to directly connect to Li-Gyro via WiFi. The advantage of this control mode is simplicity.
 
 ## Applications
