@@ -1,40 +1,37 @@
-# Li-Gyro開源程式
-## 簡介
-Li-Gyro是一片支援輕量自穩飛行器的飛控板 。其供電電池為1s鋰電池(4.2V)。搭載ESP8266微處理器，以WiFi為控制媒介，操作距離約莫100公尺。另配備MPU6050，提供陀螺儀自穩功能，能在飛行器偏離預期航道時，自動修正偏差航道，將飛行器拉回正常航道上。驅動器方面，支援2顆空心杯直流馬達、2顆伺服馬達，可應用於雙馬達(差速)遙控飛機、固定翼遙控飛機、三角翼混控飛機和氣墊船等載體。最後，其具備燒錄功能，讓玩家可自行客製化飛控板程式。
+# Li-Gyro Open Source
+## Introduction
+Li-Gyro is a flight controller which supports light-weight self-stablization aircraft[^1]. It is powered by a 1s li-po battery (4.2v). Figure 1 shows the configuration of Li-Gyro flight controller. It is featured by ESP8266 micro processor, and thus can be connected via WiFi. With equipped by an external antenna, the communication range can reach up to 100 meters, which has been verified in many field tests. It is also featured by MPU6050 to enable self-stablization for aircraft. It allows beginners to enjoy this hobby. Regarding actuators, Li-Gyro is equipped by 2 DC motors and 2 servos. It is thus suitable for aircraft with differential thrust, fixed wing aircraft, and delta wing with mixture control. Finally, it has flash mode to enable flexibility for hobbists to customize their own flight controller.
+Regarding transmitters, Li-Gyro can be directly controlled by smartphone with V7RC installed ([Android](https://play.google.com/store/apps/details?id=com.v7idea.v7rcliteandroidsdkversion&hl=zh_TW&gl=US), [iPhone](https://apps.apple.com/tw/app/v7rc/id1390983964)). Alternatively, it can also be controlled by Gamepad.
 
-## Li-Gyro機板介紹
-圖 1為Li-Gyro機板配置，從背面來看，其搭載ESP8266，以WiFi為控制媒介，並以外接天線的方式延伸控制距離，實際測試控制距離可達約100公尺，例如400公尺操場皆在控制範圍內。從正面來看，其內嵌MPU6050陀螺儀，能夠偵測飛行載體的飛行姿態，如與預期飛行姿態有偏差時，則可予以修正，驅動器支援2顆空心杯直流馬達、2顆伺服馬達，具有燒錄功能，可隨時修改飛控板程式延伸其應用範圍。
-遙控器方面，可使用手機安裝V7RC(Android, iPhone)來操控Li-Gyro機板，或是以實體手把來操控皆可，相關的開源程式如下介紹。
+[^1]: Many thanks to Nicholas Rehm for giving permission to this work to extend [dRhemFlight](https://github.com/nickrehm/dRehmFlight) from VTOL to light-weight self-stabilization aircraft.
 
-![Li-Gyro specification](https://github.com/ChihChuanCheng/Li-Gyro/blob/main/Li-GyroFlightController.png)
+![Li-Gyro specification](https://github.com/ChihChuanCheng/Li-Gyro/blob/main/Li-GyroFlightController[en].png)
 
-
-**圖 1 Li-Gyro機板配置**
+**Figure 1. Configuration of Li-Gyro**
  
 
-## 開源程式介紹
-### 接收器
-#### Li-Gyro	Li-Gyro飛控板程式
-Li-Gyro為飛控板開源程式，其主程式專門接收符合V7RC協定的控制信令，透過陀螺儀的PID控制系統，為飛行器修正飛行姿態，以便將其鎖定在期待的航道上，最後再將修正完的控制命令下達給馬達，完成控制。
-### 遙控器
+## Introduction to open sources
+### Receiver
+#### Li-Gyro flight controller
+Li-Gyro is the open source for Li-Gyro flight controller. It mainly receives control commands (encoded with V7RC protocol) transmitted from smartphone or gamepad, adjusts control commands based on current orientation of the aircraft, and configure adjusted control commands to motors.
+### Transmitter
 #### V7RC app
-V7RC app介紹請參考(https://hackmd.io/@accomdemy/v7rc)。
-#### Gamepad_V7RC	V7RC gamepad程式
-以藍芽連接手機V7RC app，再利用V7RC以WiFi連接Li-Gyro飛控板，其好處是可利用豐富的V7RC的功能，如調整遙桿校正、遙控範圍限定等。
+V7RC app is introduced in [V7RC](https://hackmd.io/@accomdemy/v7rc).
+#### V7RC gamepad
+To allow gamepad to connect to V7RC app (in gamepad mode) via bluetooth, which in turn connects to Li-Gyro via WiFi to deliver control command. In this way, gamepad is able to take the advantage of V7RC app for parameter adjustment, e.g, trimming.
 #### Gamepad_WiFi	WiFi gamepad程式
-Gamepad_WiFi: 直接以WiFi連接Li-Gyro飛控板，其好處是設定較為單純，可快速完成連線，享受飛行。
+To allow gamepad to directly connect to Li-Gyro via WiFi. The advantage of this control mode is simplicity.
 
-## 相關應用
-**雙馬達(差速)萊特機**
+## Applications
+**Wright Flyer (with differential thrust)**
 
-**雙馬達(差速)氣墊船**
+**Hovercraft (with differential thrust)**
 
-**固定翼衝浪者**
+**Fixed wing aircraft**
 
-**電控仿生鳥**
+**RC ornithopter**
 
-## 免責聲明
-本程式為輕量自穩飛行器的飛控板開源程式，並可被玩家修改以符合其使用需求。它不可被使用於載人的飛行器上。本人不負使用本程式時所造成的損害和人員損傷，請使用者自負使用或修改本程式所造成的後果。
-
+## Disclaimer
+This code is a shared, open source flight controller for small micro aerial vehicles and is intended to be modified to suit your needs. It is NOT intended to be used on manned vehicles. I do not claim any responsibility for any damage or injury that may be inflicted as a result of the use of this code. Use and modify at your own risk. More specifically put:
 THIS SOFTWARE IS PROVIDED BY THE CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
