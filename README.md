@@ -17,14 +17,14 @@ Regarding transmitter, as described above, Li-Gyro can be controlled by smartpho
 ## Introduction to Software
 ### Receiver
 #### Li-Gyro flight controller
-Li-Gyro is the open source for Li-Gyro flight controller. It receives control commands (encoded by V7RC protocol) sent from smartphone or gamepad, tunes control commands to make the aircraft stick to desired its desired flying path, and configure the modified control commands to actuators.
+Li-Gyro is the code for Li-Gyro flight controller. It receives control commands (encoded by V7RC protocol) sent from smartphone or gamepad, tunes control commands to make the aircraft stick to desired its desired flying path, and configure the modified control commands to actuators.
 ### Transmitter
 #### Smartphone with V7RC app installed
 The introduction of V7RC app can be found in [V7RC](https://hackmd.io/@accomdemy/v7rc).
 #### Gamepad for V7RC app
-Gamepad_V7RC is the open source for gamepad to connect, via bluetooth, to V7RC app in gamepad mode, which in turn connects to Li-Gyro flight controller via WiFi to realize remote control. In this way, gamepad can take the advantage of V7RC app for parameter adjustment, e.g, joystick trimming.
+Gamepad_V7RC is the code for gamepad to connect, via bluetooth, to V7RC app in gamepad mode, which in turn connects to Li-Gyro flight controller via WiFi to realize remote control. In this way, gamepad can take the advantage of V7RC app for parameter adjustment, e.g, joystick trimming.
 #### Gamepad for WiFi
-Gamepad_Wifi is the open source for gamepad to connect directly to Li-Gyro flight controller via WiFi. The benefit for this control mode is simplicity.
+Gamepad_Wifi is the code for gamepad to connect directly to Li-Gyro flight controller via WiFi. The benefit for this control mode is simplicity.
 
 ## Applications
 **Wright Flyer (with differential thrust)**
