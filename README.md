@@ -8,12 +8,11 @@ Li-Gyro is a flight controller which supports light-weight self-stabilization ai
 
 **Figure 1. Configuration of Li-Gyro**
 
-Regarding transmitter, as described above, Li-Gyro can be controlled by smartphone with V7RC installed ([Android](https://play.google.com/store/apps/details?id=com.v7idea.v7rcliteandroidsdkversion&hl=zh_TW&gl=US), [iPhone](https://apps.apple.com/tw/app/v7rc/id1390983964)). For user who loves physical touch of joystick while flying a RC aircraft, a gamepad is also provided together with Li-Gyro. Figure 2 shows the configuration of a gamepad. Gamepad is powered by 14500 lipo battery (4.2V). ESP32 is selected as the main processor, because it supports both bluetooth and WiFi simultaneously. Four buttons can be configured on the gamepad, which are SWA, SWB, button S on left joystick, and button P on right joystick. Joystick is designed for lefthand throttle. In other words, left joystick is for throttle and rudder, while right joystick is for elevator and aileron. For standalone option, OLED is used as panel to display gamepad status.
-
+Regarding transmitter, as described above, Li-Gyro can be controlled by smartphone with V7RC installed ([Android](https://play.google.com/store/apps/details?id=com.v7idea.v7rcliteandroidsdkversion&hl=zh_TW&gl=US), [iPhone](https://apps.apple.com/tw/app/v7rc/id1390983964)). Nevertheless, for user who loves physical touch of joystick while flying a RC aircraft, a gamepad is also provided as an option. Figure 2 shows the configuration of a gamepad. Gamepad is powered by 14500 lipo battery (4.2V). ESP32 is selected as the main processor, because it supports both bluetooth and WiFi simultaneously. Four buttons can be configured on the gamepad, which are SWA, SWB, button S on left joystick, and button P on right joystick. Joystick is designed for lefthand throttle. In other words, left joystick is mainly for throttle and rudder control, while right joystick is mainly for elevator and aileron control. For standalone mode, OLED is used as panel to display gamepad status.
 
 ![Gamepad specification](https://github.com/ChihChuanCheng/Li-Gyro/blob/main/Gamepad[en].png)
 
-**Figure 2. Configuration of Gamepad**
+**Figure 2. Configuration of a Gamepad**
 
 ## Introduction to open sources
 ### Receiver
