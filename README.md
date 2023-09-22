@@ -1,6 +1,6 @@
 # Li-Gyro Open Source
 ## Introduction
-Li-Gyro is a flight controller which supports light-weight self-stabilization aircraft[^1]. Figure 1 shows the configuration of Li-Gyro flight controller. It integrates all required functionalities into a PCB to simplify aircraft build. To make it more beginner friendly, ESP8266 is adopted as main processor, which can be controlled directly by smartphone via WiFi. In other words, a beginner does not need to purchase an additional transmitter for remote control. To eliminate the concern of communication range, an external antenna is pluged on ESP8266 to extend control range up to 100 meters, which is far enough for a light-weight aircraft. Moreover, Li-Gyro is featured by MPU6050 to enable self-stabilization. An aircraft with self-stabilization can automatically fix a bias from desired flight path. It thus reduces the gap for a beginner to join this hobby. To be able to support a variety of aircrafts, 2 DC motors and 2 servos are installed on Li-Gyro, allowing it to support differential thrust, fixed wing aircraft, and delta wing with mixture control. Finally, by enabling flash mode on PCB, users can modify code to customize Li-Gyro for their needs. 
+Li-Gyro is a flight controller which supports light-weight self-stabilization aircraft[^1]. Figure 1 shows the configuration of Li-Gyro flight controller. Li-Gyro is powered by 1s lipo battery (4.2V).　It integrates all required functionalities into a PCB to simplify aircraft build. To make it more beginner friendly, ESP8266 is adopted as main processor, which can be controlled directly by smartphone via WiFi. In other words, a beginner does not need to purchase an additional transmitter for remote control. To eliminate the concern of communication range, an external antenna is pluged on ESP8266 to extend control range up to 100 meters, which is far enough for a light-weight aircraft. Moreover, Li-Gyro is featured by MPU6050 to enable self-stabilization. An aircraft with self-stabilization can automatically fix a bias from desired flight path. It thus reduces the gap for a beginner to join this hobby. To be able to support a variety of aircrafts, 2 DC motors and 2 servos are installed on Li-Gyro, allowing it to support differential thrust, fixed wing aircraft, and delta wing with mixture control. Finally, by enabling flash mode on PCB, users can modify code to customize Li-Gyro for their needs. 
 
 [^1]: Many thanks to Nicholas Rehm for giving permission to this work to extend [dRhemFlight](https://github.com/nickrehm/dRehmFlight) from VTOL to light-weight self-stabilization aircraft.
 
@@ -8,10 +8,12 @@ Li-Gyro is a flight controller which supports light-weight self-stabilization ai
 
 **Figure 1. Configuration of Li-Gyro**
 
-Regarding transmitter, as described above, Li-Gyro can be controlled by smartphone with V7RC installed ([Android](https://play.google.com/store/apps/details?id=com.v7idea.v7rcliteandroidsdkversion&hl=zh_TW&gl=US), [iPhone](https://apps.apple.com/tw/app/v7rc/id1390983964)). For users who love physical touch of joystick while flying a RC aircraft, the code for Gamepad is also provided together with Li-Gyro.
+Regarding transmitter, as described above, Li-Gyro can be controlled by smartphone with V7RC installed ([Android](https://play.google.com/store/apps/details?id=com.v7idea.v7rcliteandroidsdkversion&hl=zh_TW&gl=US), [iPhone](https://apps.apple.com/tw/app/v7rc/id1390983964)). For user who loves physical touch of joystick while flying a RC aircraft, a gamepad is also provided together with Li-Gyro. Figure 2 shows the configuration of a gamepad. Gamepad is powered by 14500 lipo battery (4.2V). ESP32 is selected as the main processor, because it supports both bluetooth and WiFi simultaneously. Four buttons can be configured on the gamepad, which are SWA, SWB, button S on left joystick, and button P on right joystick. Joystick is designed for lefthand throttle. In other words, left joystick is for throttle and rudder, while right joystick is for elevator and aileron. For standalone option, OLED is used as panel to display gamepad status.
 
 
 ![Gamepad specification](https://github.com/ChihChuanCheng/Li-Gyro/blob/main/Gamepad[en].png)
+
+**Figure 2. Configuration of Gamepad**
 
 ## Introduction to open sources
 ### Receiver
