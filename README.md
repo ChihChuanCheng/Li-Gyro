@@ -10,6 +10,7 @@ Li-Gyro is a flight controller which supports light-weight self-stabilization ai
 
 Regarding transmitter, as described above, Li-Gyro can be controlled by smartphone with V7RC installed ([Android](https://play.google.com/store/apps/details?id=com.v7idea.v7rcliteandroidsdkversion&hl=zh_TW&gl=US), [iPhone](https://apps.apple.com/tw/app/v7rc/id1390983964)). For users who love physical touch of joystick while flying a RC aircraft, the code for Gamepad is also provided together with Li-Gyro.
 
+
 ![Gamepad specification](https://github.com/ChihChuanCheng/Li-Gyro/blob/main/Gamepad[en].png)
 
 ## Introduction to open sources
