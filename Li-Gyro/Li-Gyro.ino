@@ -16,8 +16,8 @@
 #define LOW_POWER_PROTECT_VALUE 880 //880 corresponds to 3.7v
 
 //Server connect to WiFi Network
-#define AP_SSID "Wright002" //改成你的AP帳號
-#define AP_PSW "Wright002" //改成你的密碼
+#define AP_SSID "Wright002" //Change to your SSID
+#define AP_PSW "Wright002" //Change to your Password
 
 //Parameter for WiFi connection
 unsigned int localPort = 6188;
