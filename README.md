@@ -16,7 +16,7 @@ Regarding transmitter, as described above, Li-Gyro can be controlled by smartpho
 
 ## Introduction to Software
 ### Receiver
-#### Li-Gyro flight controller
+#### Li-Gyro flight controller [[Chinese version]](https://github.com/ChihChuanCheng/Li-Gyro/blob/main/Li-Gyro/Li-Gyro[Code][cn].pdf)
 Li-Gyro is the code for Li-Gyro flight controller. It receives control commands (encoded by V7RC protocol) sent from smartphone or gamepad, tunes control commands to make the aircraft stick to desired its desired flying path, and configure the modified control commands to actuators.
 ### Transmitter
 #### Smartphone with V7RC app installed
