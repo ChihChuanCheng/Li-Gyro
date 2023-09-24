@@ -28,6 +28,7 @@ Gamepad_Wifi is the code for gamepad to connect directly to Li-Gyro flight contr
 
 ## Applications
 **Wright Flyer (with differential thrust) [[Chinese version]](https://github.com/ChihChuanCheng/Li-Gyro/blob/main/Wright_Flyer/Wright_Flyer[cn].pdf) [[English version]](https://github.com/ChihChuanCheng/Li-Gyro/blob/main/Wright_Flyer/Wright_Flyer[en].pdf)**
+Wright Flyer is a good airplane for beginner to step into the flying RC hobby. It is a two-motor airplane with differential thrust for direction control. General speaking, it is a 2-channel airplane, where one channel for throttle control and the other channel for rudder control. It is easy to build, easy to fly, and, the most important, strong enough to resist crashes. 
 
 **Hovercraft (with differential thrust)**
 
