@@ -27,7 +27,7 @@ Gamepad_V7RC is the code for gamepad to connect, via bluetooth, to V7RC app in g
 Gamepad_Wifi is the code for gamepad to connect directly to Li-Gyro flight controller via WiFi. The benefit for this control mode is simplicity.
 
 ## Applications
-**Wright Flyer (with differential thrust) [[Chinese version]](https://github.com/ChihChuanCheng/Li-Gyro/blob/main/Wright_Flyer/Wright_Flyer[cn].pdf)**
+**Wright Flyer (with differential thrust) [[Chinese version]](https://github.com/ChihChuanCheng/Li-Gyro/blob/main/Wright_Flyer/Wright_Flyer[cn].pdf) [[English version]](https://github.com/ChihChuanCheng/Li-Gyro/blob/main/Wright_Flyer/Wright_Flyer[en].pdf)**
 
 **Hovercraft (with differential thrust)**
 
