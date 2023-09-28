@@ -21,13 +21,14 @@ Li-Gyro is the code for Li-Gyro flight controller. It receives control commands 
 ### Transmitter
 #### Smartphone with V7RC app installed
 The introduction of V7RC app can be found in [V7RC](https://hackmd.io/@accomdemy/v7rc).
-#### Gamepad for V7RC app
+#### Gamepad for V7RC app [[Chinese version]](https://github.com/ChihChuanCheng/Li-Gyro/blob/main/Gamepad_V7RC/Gamepad_V7RC[cn].pdf)
 Gamepad_V7RC is the code for gamepad to connect, via bluetooth, to V7RC app in gamepad mode, which in turn connects to Li-Gyro flight controller via WiFi to realize remote control. In this way, gamepad can take the advantage of V7RC app for parameter adjustment, e.g, joystick trimming.
 #### Gamepad for WiFi
 Gamepad_Wifi is the code for gamepad to connect directly to Li-Gyro flight controller via WiFi. The benefit for this control mode is simplicity.
 
 ## Applications
 **Wright Flyer (with differential thrust) [[Chinese version]](https://github.com/ChihChuanCheng/Li-Gyro/blob/main/Wright_Flyer/Wright_Flyer[cn].pdf) [[English version]](https://github.com/ChihChuanCheng/Li-Gyro/blob/main/Wright_Flyer/Wright_Flyer[en].pdf)**
+
 Wright Flyer is a good airplane for beginner to step into the flying RC hobby. It is a two-motor airplane with differential thrust for direction control. General speaking, it is a 2-channel airplane, where one channel for throttle control and the other channel for rudder control. It is easy to build, easy to fly, and, the most important is strong enough to resist crashes. 
 
 **Hovercraft (with differential thrust)**
