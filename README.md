@@ -18,6 +18,9 @@ Regarding transmitter, as described above, Li-Gyro can be controlled by smartpho
 ### Receiver
 #### Li-Gyro flight controller [[Chinese version]](https://github.com/ChihChuanCheng/Li-Gyro/blob/main/Li-Gyro/Li-Gyro[Code][cn].pdf) [[English version]](https://github.com/ChihChuanCheng/Li-Gyro/blob/main/Li-Gyro/Li-Gyro[Code][en].pdf)
 Li-Gyro is the code for Li-Gyro flight controller. It receives control commands (encoded by V7RC protocol) sent from smartphone or gamepad, tunes control commands to make the aircraft stick to desired its desired flying path, and configure the modified control commands to actuators.
+#### Li-Gyro flight controller with dynamic PID parameter update
+The 2nd version of Li-Gyro enables dynamic PID parameter update. Specifically, during WiFi connected state, when receiving V7RC command with prefix of "PID", Li-Gyro updates the subsequent PID parameters, respectively, for roll, pitch, and yaw for PID control, and stores them in EEPROM for future use.
+[NOTE] This code will take effect only when transmitter is running "Gamepad for WiFi with Menu mode".
 ### Transmitter
 #### Smartphone with V7RC app installed
 The introduction of V7RC app can be found in [V7RC](https://hackmd.io/@accomdemy/v7rc).
@@ -25,6 +28,9 @@ The introduction of V7RC app can be found in [V7RC](https://hackmd.io/@accomdemy
 Gamepad_V7RC is the code for gamepad to connect, via bluetooth, to V7RC app in gamepad mode, which in turn connects to Li-Gyro flight controller via WiFi to realize remote control. In this way, gamepad can take the advantage of V7RC app for parameter adjustment, e.g, joystick trimming.
 #### Gamepad for WiFi [[Chinese version]](https://github.com/ChihChuanCheng/Li-Gyro/blob/main/Gamepad_V7RC/Gamepad_WiFi[cn].pdf) [[English version]](https://github.com/ChihChuanCheng/Li-Gyro/blob/main/Gamepad_V7RC/Gamepad_WiFi[en].pdf) [[demo]](https://youtu.be/4S4TK8dZi0w)
 Gamepad_Wifi is the code for gamepad to connect directly to Li-Gyro flight controller via WiFi. The benefit for this control mode is simplicity.
+#### Gamepad for WiFi with Menu mode
+Gamepad_Wifi_Menu provides menu mode for user to perform manual SSID scan, PID parameter setting, Gamepad functionality test, and Calibration (for joystick centering).
+[NOTE] This code will take effect only when receiver is running "Li-Gyro flight controller with dynamic PID parameter update".
 
 ## Applications
 **Wright Flyer (with differential thrust) [[Chinese version]](https://github.com/ChihChuanCheng/Li-Gyro/blob/main/Wright_Flyer/Wright_Flyer[cn].pdf) [[English version]](https://github.com/ChihChuanCheng/Li-Gyro/blob/main/Wright_Flyer/Wright_Flyer[en].pdf) [[demo]](https://youtu.be/dp7WQTxrX8g)**
