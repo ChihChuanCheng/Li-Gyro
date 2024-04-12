@@ -21,6 +21,8 @@ Li-Gyro is the code for Li-Gyro flight controller. It receives control commands 
 #### Li-Gyro flight controller with dynamic PID parameter update
 The 2nd version of Li-Gyro enables dynamic PID parameter update. Specifically, during WiFi connected state, when receiving V7RC command with prefix of "PID", Li-Gyro updates the subsequent PID parameters, respectively, for roll, pitch, and yaw for PID control, and stores them in EEPROM for future use.
 [NOTE] This code will take effect only when transmitter is running "Gamepad for WiFi with Menu mode".
+#### BlocklyDuino
+It provides extension of BlocklyDuino for Li-Gyro flight controller, allowing users to program Li-Gyro flight control by drag-and-drop blocks. The manual includes how to install the extension as well as how to program Li-Gyro flight control using the newly defined blocks.
 ### Transmitter
 #### Smartphone with V7RC app installed
 The introduction of V7RC app can be found in [V7RC](https://hackmd.io/@accomdemy/v7rc).
