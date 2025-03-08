@@ -24,7 +24,7 @@ int s1_command_PWM, s2_command_PWM;
 //Controller parameters (take note of defaults before modifying!): 
 float i_limit = 25.0;  // Integrator saturation level, mostly for safety (default 25.0)
 float maxRoll = 40.0;  // default: 30.0;  //Max roll angle in degrees for angle mode (maximum 60 degrees), deg/sec for rate mode 
-float maxPitch = 40.0; // default: 30.0;  //Max pitch angle in degrees for angle mode (maximum 60 degrees), deg/sec for rate mode
+float maxPitch = 90.0; // default: 30.0;  //Max pitch angle in degrees for angle mode (maximum 60 degrees), deg/sec for rate mode
 float maxYaw = 160;    // Max yaw rate in deg/sec
 
 float Kp_roll_angle = 0.5;  // default: 0.2;  //Roll P-gain - angle mode 
@@ -163,20 +163,12 @@ void controlMixer() {
    * in preparation to be sent to the motor ESCs and servos.
    */
   /* Wright Flyer (differential trust) */
-  /*int yaw_weight = 0.2;
+  int yaw_weight = 0.2;
   m1_command_scaled = thro_des+yaw_weight*(yaw_des/maxYaw)+yaw_PID;
   m2_command_scaled = thro_des-yaw_weight*(yaw_des/maxYaw)-yaw_PID;
 
   s1_command_scaled = 0;
-  s2_command_scaled = 0;*/
-
-  /* fly mouse */
-  int yaw_weight = 0.2;
-  m1_command_scaled = thro_des+yaw_weight*(yaw_des/maxYaw)-yaw_PID;
-  m2_command_scaled = thro_des-yaw_weight*(yaw_des/maxYaw)+yaw_PID;
-
-  s1_command_scaled = 0;
-  s2_command_scaled = 0;
+  s2_command_scaled = pitch_des;
 
   /* Hovercraft (lift control plus differential trust on servos) */
   /*

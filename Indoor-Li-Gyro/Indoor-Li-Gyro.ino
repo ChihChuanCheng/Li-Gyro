@@ -34,8 +34,11 @@ char packetBuffer[255];
 int datafromV7RC[8]={1500,1500,1500,1500,1500,1500,1500,1500};
 
 //Variables for motor control
-uint8_t rudder = 90;
-uint8_t elevator = 90;
+uint8_t elevator = 0;
+uint8_t rudder = 0;
+
+uint8_t rudder0 = 0;
+uint8_t rudder1 = 0;
 uint8_t throttle = 0;
 uint8_t throttle2 = 0;
 uint16_t residualPower = 0;  // value read from analog port (OBSOLATE)
@@ -122,13 +125,13 @@ void loop()
     /* When there is no client connected, turn off throttle and set rudder to 90 degree */
     throttle = 0;
     throttle2 = 0;
-    rudder = 90;
-    elevator = 90;
+    rudder0 = 0;
+    rudder1 = 0;
 #ifdef __LOG__
     Serial.print("Waiting for clients...., current number of clients is ");
     Serial.println(WiFi.softAPgetStationNum());
 #endif /* __LOG__ */
-    motor_control(rudder, elevator, throttle, throttle2);
+    motor_control(rudder0, rudder1, throttle, throttle2);
   }
   else
   {
@@ -159,26 +162,29 @@ void loop()
       rudder = (uint8_t) getRudderCommand();
       elevator = (uint8_t) getElevatorCommand();
 
-      if (LOW_POWER_PROTECT_VALUE >= getResidualPower())
+      if (elevator <= 90)
       {
-        //Low power protection (OBSOLATE)
-        motor_control(rudder, elevator, throttle, throttle2);
+        rudder0 = (uint8_t) (255 - commandMapping(elevator, 0, 90, 0, 255));
+        rudder1 = 0;
       }
       else
       {
-        // For the sake of safety:
-        // enable moter control only when player manipulate throttle or rudder exceeding certain ranges
-        if ((datafromV7RC[1] > 1060) ||
-            (datafromV7RC[3] > 1560) ||
-            (datafromV7RC[3] < 1440)
-           )
-        {
-          motor_control(rudder, elevator, throttle, throttle2);
-        }
-        else
-        {
-          motor_control(rudder, elevator, 0, 0);
-        }
+        rudder0 = 0;
+        rudder1 = commandMapping(elevator, 90, 180, 0, 255);
+      }
+      
+      // For the sake of safety:
+      // enable moter control only when player manipulate throttle or rudder exceeding certain ranges
+      if ((datafromV7RC[1] > 1060) ||
+          (datafromV7RC[3] > 1560) ||
+          (datafromV7RC[3] < 1440)
+         )
+      {
+        motor_control(rudder0, rudder1, throttle, throttle2);
+      }
+      else
+      {
+        motor_control(rudder0, rudder1, 0, 0);
       }
 
       // (7) Feed radio command of V7RC to PID controller

@@ -112,10 +112,19 @@ uint16_t commandMapping(int x, int lowerest_input, int highest_input, int lowerb
 
 void get_joystick_status()
 {
+#ifdef __LEFT_HAND_THROTTLE__
   r_pos_x_v = (ads.readADC_SingleEnded(1) * Scalevoltage) * 100;
   r_pos_y_v = (ads.readADC_SingleEnded(0) * Scalevoltage) * 100;
   l_pos_x_v = (ads.readADC_SingleEnded(3) * Scalevoltage) * 100;
   l_pos_y_v = (ads.readADC_SingleEnded(2) * Scalevoltage) * 100;
+#endif
+
+#ifdef __RIGHT_HAND_THROTTLE__
+  r_pos_x_v = (ads.readADC_SingleEnded(3) * Scalevoltage) * 100;
+  r_pos_y_v = (ads.readADC_SingleEnded(2) * Scalevoltage) * 100;
+  l_pos_x_v = (ads.readADC_SingleEnded(1) * Scalevoltage) * 100;
+  l_pos_y_v = (ads.readADC_SingleEnded(0) * Scalevoltage) * 100;
+#endif
 
   /* to convert analog signal to V7RC command
    * [NOTE] the direction of x's are opposite to those of V7RC

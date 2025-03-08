@@ -2,9 +2,10 @@
 #include <WiFi.h>
 #include "oled.h"
 #include "utility.h"
+#include "wifi.h"
 
 /* WiFi settings */
-const uint8_t size_prefix_str = 2;
+const uint8_t size_prefix_str = 3;
 String prefix[size_prefix_str];
 
 int num_scaned_ssid = 0;
@@ -12,7 +13,7 @@ int num_scaned_ssid = 0;
 String ssid = "";
 String pswd = "";
 uint8_t wifi_trial = 0;
-uint8_t wifi_trial_max = 10;
+uint8_t wifi_trial_max = 30;
 
 void ssid_pswd_write(String input_ssid, String input_pswd) {
 #ifdef __LOG__
@@ -48,6 +49,7 @@ void prefix_init()
 {
   prefix[0] = "Wright";
   prefix[1] = "Hover";
+  prefix[2] = "Drone";
 }
 
 /* 
@@ -205,17 +207,38 @@ void reconnect_wifi()
     Serial.print(".");
     wifi_trial = wifi_trial+1;
     Serial.print(wifi_trial);
+
+    if (wifi_trial_max == wifi_trial) {
+      /* if failed to connect to WiFi after 10 trials, perform WiFi scan */
+      WiFi.disconnect();
+
+      // scan_wifi();
+      // inseart_designated_ssid_eeprom();
+
+      // ssid_pswd_read();
+      // WiFi.begin(ssid.c_str(), pswd.c_str());
+      /* reset connecting */
+      wifi_trial = 0;
+      break;
+    }
   }
 
+if (WiFi.status() == WL_CONNECTED)
+  {
 #ifdef __OLED__
-  showCurrentSSID(ssid);
+    showCurrentSSID(ssid);
 #endif
 
-#ifdef __LOG__
-  Serial.println("Connected"); 
-  Serial.print("IP Address:"); 
-  Serial.println(WiFi.localIP());
+    Serial.println("Connected"); 
+    Serial.print("IP Address:"); 
+    Serial.println(WiFi.localIP());
+  }
+  else
+  {
+#ifdef __OLED__
+    showCurrentStage(String("No connection"));
 #endif
+  }
 }
 
 /*
@@ -247,21 +270,31 @@ void init_wifi()
       /* if failed to connect to WiFi after 10 trials, perform WiFi scan */
       WiFi.disconnect();
 
-      scan_wifi();
-      inseart_designated_ssid_eeprom();
+      // scan_wifi();
+      // inseart_designated_ssid_eeprom();
 
-      ssid_pswd_read();
-      WiFi.begin(ssid.c_str(), pswd.c_str());
+      // ssid_pswd_read();
+      // WiFi.begin(ssid.c_str(), pswd.c_str());
       /* reset connecting */
       wifi_trial = 0;
+      break;
     }
   }
 
+  if (WiFi.status() == WL_CONNECTED)
+  {
 #ifdef __OLED__
-  showCurrentSSID(ssid);
+    showCurrentSSID(ssid);
 #endif
 
-  Serial.println("Connected"); 
-  Serial.print("IP Address:"); 
-  Serial.println(WiFi.localIP());
+    Serial.println("Connected"); 
+    Serial.print("IP Address:"); 
+    Serial.println(WiFi.localIP());
+  }
+  else
+  {
+#ifdef __OLED__
+    showCurrentStage(String("No connection"));
+#endif
+  }
 }

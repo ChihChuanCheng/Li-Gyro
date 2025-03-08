@@ -1,4 +1,5 @@
 #pragma once
+#include "Arduino.h"
 
 void ssid_pswd_read();
 void ssid_pswd_write(String input_ssid, String input_pswd);
